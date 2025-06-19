@@ -1,151 +1,140 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 :root {
-  --box-shadow: 0 1px 3px rgba(5, 5, 3, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --green: #2ecc71;
+  --red: #e74c3c;
+  --blue: #34495e;
+  --bg: #f7f9fa;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #ccedf3;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--blue);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
 }
 
 .container {
-  margin: 30px auto;
-  width: 350px;
+  background: #fff;
+  padding: 2rem;
+  width: 95%;
+  max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
 }
 
-h1 {
-  letter-spacing: 1px;
-  margin: 0;
+header h1 {
+  text-align: center;
+  margin-bottom: 0.2rem;
 }
 
-h3 {
-  border-bottom: 1px solid #c07f8d;
-  padding-bottom: 10px;
-  margin: 40px 0 10px;
+header p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
 }
 
-h4 {
-  margin: 0;
-  text-transform: uppercase;
+.balance {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.inc-exp-container {
-  background-color: #d8dfe3b0;
-  box-shadow: var(--box-shadow);
-  padding: 20px;
+.summary {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
-}
-
-.inc-exp-container > div {
-  flex: 1;
-  text-align: center;
-}
-
-.inc-exp-container > div:first-of-type {
-  border-right: 1px solid #d1dae2;
+  background: #ecf0f1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .money {
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin: 5px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .money.plus {
-  color: #00cc55;
+  color: var(--green);
 }
 
 .money.minus {
-  color: #c81703;
-}
-
-label {
-  display: inline-block;
-  margin: 10px 0;
-}
-
-input[type='text'],
-input[type='number'] {
-  border: 1px solid #0d0c0c;
-  border-radius: 2px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
-}
-
-.btn {
-  cursor: pointer;
-  background-color: #27196e;
-  box-shadow: var(--box-shadow);
-  color: #f3c8c8;
-  border: 0;
-  display: block;
-  font-size: 16px;
-  margin: 10px 0 30px;
-  padding: 10px;
-  width: 100%;
-}
-
-.btn:focus,
-.delete-btn:focus {
-  outline: 0;
+  color: var(--red);
 }
 
 .list {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
+  list-style: none;
+  margin: 1rem 0;
 }
 
 .list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #0a0909;
+  background: #f9f9f9;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
+  border-right: 5px solid;
+  border-radius: 0.3rem;
+  box-shadow: var(--shadow);
+  transition: 0.2s ease;
 }
 
 .list li.plus {
-  border-right: 5px solid #2ecc71;
+  border-color: var(--green);
 }
 
 .list li.minus {
-  border-right: 5px solid #c0392b;
+  border-color: var(--red);
 }
 
-.delete-btn {
+.list button {
+  background: none;
+  border: none;
+  color: #c0392b;
+  font-size: 1.1rem;
   cursor: pointer;
-  background-color: #250400;
-  border: 0;
-  color: #e0a7a7;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  margin-left: 10px;
 }
 
-.list li:hover .delete-btn {
-  opacity: 1;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+form input {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.btn {
+  background: var(--blue);
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #2c3e50;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 2rem;
 }
